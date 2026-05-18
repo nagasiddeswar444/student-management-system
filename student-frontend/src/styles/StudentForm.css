@@ -1,0 +1,79 @@
+/* Student registration form styles */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(
+      1200px circle at 10% 10%,
+      rgba(79, 70, 229, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(
+      900px circle at 90% 20%,
+      rgba(6, 182, 212, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #0b2447, #0f172a);
+}
+
+/* StudentForm.tsx uses inline wrapper style: width: "400px", margin: "50px auto".
+   Using attribute selectors here can be tricky with quotes, so we match the wrapper
+   using a simpler rule and style only its direct descendants. */
+
+div[style] {
+  box-sizing: border-box;
+}
+
+/* Registration card (wrapper) */
+div[style*="400px"] {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+  padding: 26px;
+}
+
+div[style*="400px"] h2 {
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+div[style*="400px"] input {
+  width: 100%;
+  padding: 12px 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 12px;
+  font-size: 14px;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+div[style*="400px"] input:focus {
+  outline: none;
+  border-color: rgba(79, 70, 229, 0.65);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.18);
+}
+
+div[style*="400px"] button {
+  width: 100%;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+div[style*="400px"] button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
